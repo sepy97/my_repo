@@ -17,9 +17,13 @@ int main()
 
 size_t mystrlen (const char* input)
 {
-    if (input != "") return 0;
+    assert (input != NULL);
     size_t result = 0;
-    while (input[result] != '\n' && input[result] != '\0') result++;
+    while (input[result] != '\n' && input[result] != '\0')
+    {
+        assert (result < strlen (input));
+        result++;
+    }
     
     return result;
 }

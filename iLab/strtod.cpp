@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 double mystrtod (const char* input, char** endptr);
 
@@ -16,6 +17,9 @@ int main() //made without exponential form
 
 double mystrtod (const char* input, char** endptr)
 {
+    assert (input != NULL);
+    assert (endptr != NULL);
+    
     double resultnum = 0;
     double resultden = 0;
     int isnumerator = 1;

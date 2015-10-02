@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 long mystrtoul (char* str, char endptr, int base);
 
@@ -18,6 +19,8 @@ int main()
 
 long mystrtoul (char* str, char endptr, int base)
 {
+    assert (str != NULL);
+    assert (base > 1);
     unsigned long result = 0;
     int i = 0;
     char cur = str[i];
